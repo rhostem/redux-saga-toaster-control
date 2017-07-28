@@ -1,0 +1,1 @@
+export const FETCH_STREAM = 'FETCH_STREAM'
