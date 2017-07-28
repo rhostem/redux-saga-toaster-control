@@ -1,5 +1,5 @@
 // @flow
-import * as AcionTypes from '../../actions/stream/types'
+import * as Types from '../../actions/types'
 import { Map, List } from 'immutable'
 
 const initialState = Map({
@@ -8,7 +8,7 @@ const initialState = Map({
 
 const stream = (state: Map = initialState, action: Object) => {
   switch (action.type) {
-    case AcionTypes.FETCH_STREAM:
+    case Types.FETCH_STREAM:
       const items = state.get('items')
       return state.set('items', items.push({}))
 
