@@ -2,30 +2,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './styles' // inject global style
-import App from './App'
 import registerServiceWorker from './registerServiceWorker'
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
-import { Route } from 'react-router-dom'
-import store, { history } from './store'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import { AppContainer } from 'react-hot-loader'
+import Root from './Root'
 
-const withRouteUpdate = WrappedComponent => {
-  const scrollToTop = () => {
-    window.scrollTo(0, 0)
-  }
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin()
 
-  return () => {
-    scrollToTop()
-    return <WrappedComponent />
-  }
+// Render the main app react component into the app div.
+// For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root'),
+  )
 }
 
-ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Route component={withRouteUpdate(App)} />
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('root'),
-)
+render(Root)
+
+if (module.hot) {
+  module.hot.accept('./Root', () => {
+    render(Root)
+  })
+}
+
 registerServiceWorker()
