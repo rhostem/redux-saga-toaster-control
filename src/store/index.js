@@ -5,11 +5,12 @@ import createHistory from 'history/createBrowserHistory'
 import rootReducer from '../reducers/rootReducer'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from '../sagas/rootSaga'
+import { fromJS } from 'immutable'
 
 export const history = createHistory()
 const sagaMiddleware = createSagaMiddleware()
 
-const initialState = {}
+const initialState = fromJS({})
 const enhancers = []
 const middleware = [thunk, routerMiddleware(history), sagaMiddleware]
 

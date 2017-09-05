@@ -19,12 +19,16 @@ class Home extends React.Component {
   }
 
   render() {
-    return <div>Home</div>
+    return (
+      <div>
+        <h1>home</h1>
+      </div>
+    )
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  // name: state.reducer.name,
+  dataList: state.getIn(['data', 'list']),
 })
 
 const mapDispatchToProps = (dispatch: Function) =>

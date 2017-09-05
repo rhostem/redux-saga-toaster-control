@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'
 import { routerReducer } from 'react-router-redux'
-import stream from './stream'
+import data from './data'
 
 const rootReducer = combineReducers({
   router: routerReducer,
-  stream,
+  data,
 })
 
 export default rootReducer

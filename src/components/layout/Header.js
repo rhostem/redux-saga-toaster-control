@@ -13,6 +13,7 @@ const HeaderBar = styled.header`
   background-color: #222;
   color: white;
 `
+
 const LogoImage = styled.img`
   ${styles.centered.centeredY()} height: ${styles.typography.rhythm(1)};
   margin-left: ${styles.typography.rhythm(1)};

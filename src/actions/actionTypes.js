@@ -1,5 +1,5 @@
-import * as stream from './stream/types'
+import * as data from './data/types'
 
 export default {
-  ...stream,
+  ...data,
 }
