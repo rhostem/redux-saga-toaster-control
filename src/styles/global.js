@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
+import { baseFontSize, baseLineHeight } from './typography'
 
 const drawOutline = () => {
   let isDebug
@@ -17,6 +18,11 @@ const drawOutline = () => {
 injectGlobal`
   ${drawOutline()}
   ${normalize()}
+
+  html {
+    font-size: ${baseFontSize};
+    line-height: ${baseLineHeight};
+  }
 
   * {
     box-sizing: border-box;

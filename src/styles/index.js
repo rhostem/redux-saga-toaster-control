@@ -3,7 +3,7 @@ import { normalize } from 'polished'
 import media from './media'
 import color from './color'
 import size from './size'
-import typography from './typography'
+import * as typography from './typography'
 import * as centered from './centered'
 
 // eslint-disable-next-line
