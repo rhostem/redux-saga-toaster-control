@@ -19,6 +19,7 @@ const LogoImage = styled.img`
   margin-left: ${styles.typography.rhythm(1)};
 `
 const Title = styled.h1`
+  font-size: 1.3rem;
   margin: 0 0 0 80px;
   height: ${styles.size.headerHeight};
   line-height: ${styles.size.headerHeight};

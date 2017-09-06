@@ -6,6 +6,24 @@ import Header from '../components/layout/Header'
 import { MainWidthHeaderSiderBar } from '../components/layout/Main'
 import SideBar from '../components/layout/SideBar'
 // import * as actions from '../actions/name';
+import styled from 'styled-components'
+import { showToastMessage } from '../actions/toast'
+import moment from 'moment'
+import ToastContainer from '../components/ToastContainer'
+
+const Button = styled.button`
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 4px;
+  background-color: palevioletred;
+  color: #fff;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 type Props = {}
 type State = {}
@@ -21,19 +39,23 @@ class Home extends React.Component {
     this.state = {}
   }
 
+  showToastMessage() {
+    this.props.showToastMessage({
+      title: 'current time',
+      content: moment().format('YYYY-MM-DD HH:mm:ss'),
+    })
+  }
+
   render() {
     return (
       <div>
         <Header />
         <SideBar />
+        <ToastContainer />
         <MainWidthHeaderSiderBar>
-          <h1>home</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
-            eligendi corrupti doloribus, ullam rerum praesentium atque eius
-            cumque iure odio doloremque, maxime reiciendis voluptatem quasi
-            nostrum recusandae hic earum. Reiciendis.
-          </p>
+          <Button onClick={this.showToastMessage.bind(this)}>
+            click to see current time
+          </Button>
         </MainWidthHeaderSiderBar>
       </div>
     )
@@ -41,14 +63,16 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  dataList: state.getIn(['data', 'list']),
+  // toastQueue: state.getIn(['toast', 'queue']),
 })
 
 const mapDispatchToProps = (dispatch: Function) =>
   bindActionCreators(
     Object.assign(
       {},
-      // actions,
+      {
+        showToastMessage,
+      },
     ),
     dispatch,
   )

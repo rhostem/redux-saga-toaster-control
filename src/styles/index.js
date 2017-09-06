@@ -1,5 +1,3 @@
-import { injectGlobal } from 'styled-components'
-import { normalize } from 'polished'
 import media from './media'
 import color from './color'
 import size from './size'
