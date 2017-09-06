@@ -28,7 +28,9 @@ const Header = () => {
   return (
     <HeaderBar>
       <LogoImage src={logo} />
-      <Title>create react app starter</Title>
+      <Title>
+        {process.env.REACT_APP_SITE_TITLE}
+      </Title>
     </HeaderBar>
   )
 }

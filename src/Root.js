@@ -14,7 +14,7 @@ import store /* , { history } */ from './store'
 const Root = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter basename="/create-react-app-starter">
+      <BrowserRouter basename={process.env.REACT_APP_ROUTE_BASENAME}>
         <AppRoutes />
       </BrowserRouter>
     </Provider>

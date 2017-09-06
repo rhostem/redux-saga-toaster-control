@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "precommit": "lint-staged",
-    "start": "PORT=3009 react-scripts start",
+    "start": "PORT=3008 react-scripts start",
     "deploy": "npm run deploy:dev",
     "deploy:dev": "npm run build:dev && npm run upload",
     "deploy:prod": "npm run build:prod && npm run upload",
@@ -19,7 +19,7 @@
     "build-storybook": "build-storybook",
     "analyze": "source-map-explorer build/static/js/main.*"
   },
-  "homepage": "https://rhostem.github.io/create-react-app-starter",
+  "homepage": "https://rhostem.github.io/redux-saga-toaster-control",
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --no-semi --single-quote --jsx-bracket-same-line --print-width 80 --trailing-comma all --parser flow --write",
