@@ -2,6 +2,9 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import Header from '../components/layout/Header'
+import { MainWidthHeaderSiderBar } from '../components/layout/Main'
+import SideBar from '../components/layout/SideBar'
 // import * as actions from '../actions/name';
 
 type Props = {}
@@ -21,7 +24,17 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>home</h1>
+        <Header />
+        <SideBar />
+        <MainWidthHeaderSiderBar>
+          <h1>home</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
+            eligendi corrupti doloribus, ullam rerum praesentium atque eius
+            cumque iure odio doloremque, maxime reiciendis voluptatem quasi
+            nostrum recusandae hic earum. Reiciendis.
+          </p>
+        </MainWidthHeaderSiderBar>
       </div>
     )
   }

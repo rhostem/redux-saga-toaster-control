@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import { AppContainer } from 'react-hot-loader'
 import Root from './Root'
+import './styles/global'
 
 require('react-hot-loader/patch')
 

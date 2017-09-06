@@ -10,6 +10,8 @@ const Aside = styled.aside`
   left: 0;
   width: ${styles.size.sideBarWidth};
   min-height: 100vh;
+  border-right: 1px solid #ccc;
+  padding: 1rem;
 `
 
 const MenuList = styled.ul`padding: 0;`
@@ -30,11 +32,6 @@ const SideBar = () => {
         <Menu>
           <NavLink exact to="/" activeStyle={activeMenuStyle}>
             Home
-          </NavLink>
-        </Menu>
-        <Menu>
-          <NavLink to="/real-time" activeStyle={activeMenuStyle}>
-            RealTime
           </NavLink>
         </Menu>
       </MenuList>

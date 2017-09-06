@@ -18,11 +18,17 @@ const LogoImage = styled.img`
   ${styles.centered.centeredY()} height: ${styles.typography.rhythm(1)};
   margin-left: ${styles.typography.rhythm(1)};
 `
+const Title = styled.h1`
+  margin: 0 0 0 80px;
+  height: ${styles.size.headerHeight};
+  line-height: ${styles.size.headerHeight};
+`
 
 const Header = () => {
   return (
     <HeaderBar>
       <LogoImage src={logo} />
+      <Title>create react app starter</Title>
     </HeaderBar>
   )
 }

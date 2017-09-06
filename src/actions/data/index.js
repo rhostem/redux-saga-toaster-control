@@ -1,6 +1,10 @@
+// flow
 import types from '../actionTypes'
 
-export const fetchData = () => {
+type FetchDataAction = {
+  type: string,
+}
+export const fetchData = (): FetchDataAction => {
   return {
     type: types.FETCH_DATA,
   }
