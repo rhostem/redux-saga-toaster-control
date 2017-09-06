@@ -5,7 +5,13 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "PORT=3009 react-scripts start",
-    "build": "react-scripts build",
+    "deploy": "npm run deploy:dev",
+    "deploy:dev": "npm run build:dev && npm run upload",
+    "deploy:prod": "npm run build:prod && npm run upload",
+    "build": "sh -ac '. .env.${REACT_APP_ENV}; react-scripts build'",
+    "build:dev": "REACT_APP_ENV=development npm run build",
+    "build:prod": "REACT_APP_ENV=production npm run build",
+    "upload": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "flow": "flow",
@@ -13,6 +19,7 @@
     "build-storybook": "build-storybook",
     "analyze": "source-map-explorer build/static/js/main.*"
   },
+  "homepage": "https://rhostem.github.io/create-react-app-starter",
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --no-semi --single-quote --jsx-bracket-same-line --print-width 80 --trailing-comma all --parser flow --write",
@@ -22,6 +29,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "flow-bin": "^0.51.0",
+    "gh-pages": "^1.0.0",
     "global": "^4.3.2",
     "husky": "^0.14.3",
     "immutable": "^3.8.1",

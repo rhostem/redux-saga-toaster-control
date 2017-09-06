@@ -16,24 +16,29 @@ const Aside = styled.aside`
 
 const MenuList = styled.ul`padding: 0;`
 
-const Menu = styled.li`list-style: none;`
+const MenuLink = styled(NavLink)`
+  display: block;
+  margin-bottom: 0.5rem;
+  list-style: none;
+  font-size: 1.2rem;
+  color: #222;
+`
 
 const activeMenuStyle = {
   fontWeight: 'bold',
+  color: 'tomato'
 }
-
-// type SideBarProps = {
-// }
 
 const SideBar = () => {
   return (
     <Aside>
       <MenuList>
-        <Menu>
-          <NavLink exact to="/" activeStyle={activeMenuStyle}>
-            Home
-          </NavLink>
-        </Menu>
+        <MenuLink exact to="/" activeStyle={activeMenuStyle}>
+          Home
+        </MenuLink>
+        <MenuLink exact to="/test-route" activeStyle={activeMenuStyle}>
+          test-route
+        </MenuLink>
       </MenuList>
     </Aside>
   )
